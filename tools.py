@@ -62,6 +62,7 @@ class ScrapeAndAnalyze(object):
         tokenCounts = nltk.FreqDist(each.lower() for each in tokens if each.isalpha())
         topTokens = tokenCounts.most_common(10)
         return topTokens
+    
 
     def topAnyTokens(self, tokens, range):
         """
@@ -72,6 +73,16 @@ class ScrapeAndAnalyze(object):
         tokenCounts = nltk.FreqDist(each.lower() for each in tokens if each.isalpha())
         topTokens = tokenCounts.most_common(range)
         return topTokens
+    
+    
+    def lowTenTokens(self, tokens):
+        """
+        :param tokens: list of tokens
+        :return topTokens: list of 10 least common tokens
+        """
+        tokenCounts = nltk.FreqDist(each.lower() for each in tokens if each.isalpha())
+        lowTokens = tokenCounts.most_common()[-10:]
+        return lowTokens
 
 
     def averageLen(self, tokens):
@@ -83,6 +94,7 @@ class ScrapeAndAnalyze(object):
         avg = np.mean(lens)
         print(avg)
         return avg
+    
 
     def wordExist(self, uniques, word):
         """
