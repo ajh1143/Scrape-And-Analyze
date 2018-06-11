@@ -63,6 +63,15 @@ class ScrapeAndAnalyze(object):
         topTokens = tokenCounts.most_common(10)
         return topTokens
 
+    def lowTenTokens(self, tokens):
+        """
+        :param tokens: list of tokens
+        :return topTokens: list of 10 least common tokens
+        """
+        tokenCounts = nltk.FreqDist(each.lower() for each in tokens if each.isalpha())
+        lowTokens = tokenCounts.most_common()[-10:]
+        return lowTokens
+
     def topAnyTokens(self, tokens, range):
         """
         :param tokens: list of tokens
