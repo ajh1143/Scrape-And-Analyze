@@ -105,6 +105,20 @@ class ScrapeAndAnalyze(object):
         return topTokens
 ```
 
+
+## Generate List of 10 Least Frequent Words
+```Python3
+    def lowTenTokens(self, tokens):
+        """
+        :param tokens: list of tokens
+        :return topTokens: list of 10 least common tokens
+        """
+        tokenCounts = nltk.FreqDist(each.lower() for each in tokens if each.isalpha())
+        lowTokens = tokenCounts.most_common()[-10:]
+        return lowTokens
+```
+
+
 ## Find Average Length of Words in Content
 
 ```Python3
