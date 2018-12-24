@@ -1,6 +1,6 @@
-# Scrape-And-Analyze
-Class of tools for language analysis 
-
+# Scrape And Analyze
+Class of tools for language analysis of URL content
+----------------------------------------------------------------------------------------------------------------------------------------
 ## Imports
 ```Python3
 from urllib import request
